@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Login Tecnograph</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="static_login/css/bootstrap.min.css" rel="stylesheet">
+	<link href="static_login/css/bootstrap-theme.min.css" rel="stylesheet">
+
+	<!-- Raleway Font -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/static_login/css/font-awesome.min.css" rel="stylesheet">
+	<!-- Stylesheet -->
+	<link href="static_login/css/login.css" media="all" rel="stylesheet" type="text/css" />
+
+	<link rel="apple-touch-icon" sizes="57x57" href="static_login/favicon_tecnograph/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="static_login/favicon_tecnograph/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="static_login/favicon_tecnograph/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="static_login/favicon_tecnograph/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="static_login/favicon_tecnograph/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="static_login/favicon_tecnograph/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="static_login/favicon_tecnograph/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="static_login/favicon_tecnograph/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="static_login/favicon_tecnograph/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="static_login/favicon_tecnograph/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="static_login/favicon_tecnograph/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="static_login/favicon_tecnograph/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="static_login/favicon_tecnograph/favicon-16x16.png">
+	<link rel="manifest" href="static_login/favicon_tecnograph/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="static_login/favicon_tecnograph/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+
+	<!-- <link href="static_login/css/app.min.css" media="all" rel="stylesheet" type="text/css" /> -->
+
+	<script>
+		function carica() {
+
+			mySearch = unescape(location.search.substr(1)).split("=");
+			if (mySearch != "")
+				if (mySearch.length > 0)
+					if (mySearch[1] != "")
+						document.getElementById("labErrore").innerHTML = mySearch[1];
+
+
+
+		}
+	</script>
+</head>
+
+
+<body onload="carica()">
+	<div class="container">
+		<div class="col-md-12">
+			<img id="logo" class="img-responsive center-block" src="static_login/img/Tecnograph_logo_con_scritta.svg" width="200px" height="200px"
+			 title="Tecnograph Logo" />
+		</div>
+
+
+		<div class="row">
+			<div class="col-md-12 col-sm-10 col-xs-12">
+				<div class="login-page">
+					<div class="form-container">
+						<p class="form-title">Servizi cartografici</p>
+						<div class="form center">
+								<form name="form1" method="post" action="../webgis/login.asp" id="form1">
+									<input name="txtUser" type="text" id="txtUser" placeholder="nome utente" required>
+									<input name="txtPwd" type="password" id="txtPwd" placeholder="password" required>
+									<button class="pulsante" type="submit" value="login"><strong>login</strong></button>
+				
+								</form>
+								<span id="labErrore" style="color:red; font-weight:bold"></span>								
+								
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Footer -->
+
+
+	<section style="height:80px;"></section>
+
+
+	<footer class="footer-bs">
+		<div class="row">
+			<div class="col-md-3 footer-brand animated fadeInLeft">
+				<h2 id="MapNet">Servizi cartografici</h2>
+				<p>© 2017 Tecnograph, All rights reserved</p>
+			</div>
+			<div class="col-md-6 footer-nav animated fadeInUp">
+				<h4>Contatti</h4>
+				<div class="col-md-7">
+					<ul class="pages">
+						<li><i class="fa fa-external-link" aria-hidden="true"></i><a href="http://www.tecnograph-group.com/" class="mapnet-link">&nbsp; Tecnograph</a></li>
+						<li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:info@tecnograph-group.com?subject=Richiesta Info su Map.NET 2.0"
+							 class="mapnet-link">&nbsp; info@tecnograph-group.com</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-2 footer-social animated fadeInDown">
+				<h4>Seguici</h4>
+				<ul>
+					<li><a href="https://www.facebook.com/TecnographFerrara/">Facebook</a></li>
+					<li><a href="https://twitter.com/tecnograph_srl">Twitter</a></li>
+				</ul>
+			</div>
+		</div>
+	</footer>
+</body>
+
+</html>

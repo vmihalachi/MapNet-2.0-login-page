@@ -1,0 +1,148 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Login</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="static_login/css/bootstrap.min.css" rel="stylesheet">
+	<link href="static_login/css/bootstrap-theme.min.css" rel="stylesheet">
+	<link rel="shortcut icon" href="static_login/img/favicon.ico" type="image">
+
+	<!-- Raleway Font -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/static_login/css/font-awesome.min.css" rel="stylesheet">
+	<!-- Stylesheet -->
+	<link href="static_login/css/login.css" media="all" rel="stylesheet" type="text/css" />
+	
+	<script>
+
+function carica(){
+
+	mySearch = unescape(location.search.substr(1)).split("=");
+	if(mySearch!="")
+		if(mySearch.length>0)
+			if (mySearch[1]!="")
+				document.getElementById("labErrore").innerHTML=mySearch[1];
+				
+	if(document.getElementById("u").value!="")
+		utenteScelto();
+
+}
+function utenteScelto(){
+	if(document.getElementById("u").value!=""){
+		http = getHTTPObject();
+		if (http!=null){
+			http.open('GET', "getApps.php?u="+document.getElementById("u").value, true);
+			http.onreadystatechange = resUtente;
+			http.send(null);
+		}
+	}
+
+}
+function resUtente(response){
+	if (http.readyState==4){
+		if(http.responseText!="0"){
+			document.getElementById("select-app").innerHTML=http.responseText;
+			document.getElementById("select-app").style.display='block';
+		}
+		else
+		{
+			document.getElementById("select-app").style.display='none';
+		}
+	}
+}
+		
+		function getHTTPObject(){ 
+			var http = false;
+
+			try {  http = new XMLHttpRequest();
+			}
+			catch (trymicrosoft) {
+				try {
+				http = new ActiveXObject("Msxml2.XMLHTTP"); 
+				} 
+				catch (othermicrosoft)
+					{
+					try
+					{
+					http = new ActiveXObject("Microsoft.XMLHTTP"); 
+					} 
+					catch (failed) 
+						{
+						http = false; 
+						}
+					}
+				}
+			return http
+		}
+</script>
+	
+</head>
+<body onload="carica()">
+
+	<div class="container">
+			<div class="col-md-12">
+				<img id="logo" class="img-responsive center-block" src="static_login/img/Map-Net-logo_only_cross.png" width="200px" height="200px"
+				 title="MapNet Logo" />
+			</div>
+	
+	
+			<div class="row">
+				<div class="col-md-12 col-sm-10 col-xs-12">
+					<div class="login-page">
+						<div class="form-container">
+							<!--<p class="form-title">Servizi cartografici</p>-->
+							<div class="form center">
+									<form name="login" method="post" action="login.php">
+										<input id="u" type="text" name="u" onchange="utenteScelto()" placeholder="nome utente" required>
+										<input type="password" name="p" placeholder="password" required>
+										<span id="select-app"></span>
+										<button class="pulsante" type="submit" value="login"><strong>login</strong></button>
+					
+									</form>
+									<span id="labErrore"></span>				
+									
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	<section style="height:80px;"></section>
+	
+	
+		<footer class="footer-bs">
+			<div class="row">
+				<div class="col-md-3 footer-brand animated fadeInLeft">
+					<h2 id="MapNet">MapNet 2.0</h2>
+					<p>© 2017 Tecnograph, All rights reserved</p>
+					<img style="margin: 0" src="static_login/img/Tecnograph_logo_con_scritta.svg" width="200px" height="200px"
+					title="Tecnograph Logo" />
+				</div>
+				<div class="col-md-6 footer-nav animated fadeInUp">
+					<h4>Contatti</h4>
+					<div class="col-md-7">
+						<ul class="pages">
+							<li><i class="fa fa-external-link" aria-hidden="true"></i><a href="http://www.tecnograph-group.com/" class="mapnet-link">&nbsp; Tecnograph</a></li>
+							<li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:info@tecnograph-group.com?subject=Richiesta Info su Map.NET 2.0"
+								 class="mapnet-link">&nbsp; info@tecnograph-group.com</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-2 footer-social animated fadeInDown">
+					<h4>Seguici</h4>
+					<ul>
+						<li><a href="https://www.facebook.com/TecnographFerrara/">Facebook</a></li>
+						<li><a href="https://twitter.com/tecnograph_srl">Twitter</a></li>
+					</ul>
+				</div>
+			</div>
+		</footer>
+</body>
+</html>

@@ -12,28 +12,31 @@ img {
 }
 
 
-font-family: 'Roboto Slab', serif;
-
-
-
 .login-page {
   width: auto;
-  padding: 10% 0 0;
   margin: auto;
 }
-.form {
+.form-container {
   position: relative;
+  max-width: 360px;
+  margin: 0 auto;
+}
+.form-title {
+  font-size: 2.5rem;
+  color: white;
+  font-weight: 700;
+  padding: 1rem 0;
+  text-align: center;
+}
+.form {
   z-index: 1;
   background: #FFFFFF;
-  max-width: 360px;
-  margin: 0 auto 100px;
   padding: 45px;
   text-align: left;;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
   border-radius: 8px;
 }
 .form input {
-  font-family: "Roboto Slab", sans-serif;
   outline: 0;
   background: #f2f2f2;
   width: 100%;
@@ -46,10 +49,9 @@ font-family: 'Roboto Slab', serif;
 
 }
 .form button {
-  font-family: "Roboto Slab", sans-serif;
   text-transform: uppercase;
   outline: 0;
-  background: #F6511D;
+  background: #1B8BF9;
   width: 100%;
   border: 0;
   padding: 15px;
@@ -62,7 +64,7 @@ font-family: 'Roboto Slab', serif;
   margin-bottom: 10px;
 }
 .form button:hover,.form button:active,.form button:focus {
-  background: #FF6232;
+  background: #1B8BF9;
 }
 .form .message {
   margin: 0;
@@ -75,6 +77,9 @@ font-family: 'Roboto Slab', serif;
 }
 .form .register-form {
   display: none;
+}
+.form #select-app {
+  margin: 1rem 0;
 }
 .container {
   position: relative;
@@ -96,7 +101,7 @@ font-family: 'Roboto Slab', serif;
   padding: 0;
   font-size: 36px;
   font-weight: 300;
-  color: #1a1a1a;
+  color: #242526;
 }
 .container .info span {
   color: #4d4d4d;
@@ -107,16 +112,16 @@ font-family: 'Roboto Slab', serif;
   text-decoration: none;
 }
 .container .info span .fa {
-  color: #EF3B3A;
+  color: #1B8BF9;
 }
 
 body {
-  background: #517fa4; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right bottom, #43C6AC, #191654);
-  background: -moz-linear-gradient(to right bottom, #43C6AC, #191654);
-  background: -o-linear-gradient(to right bottom, #43C6AC, #191654);
-  background: linear-gradient(to right bottom, #43C6AC, #191654);
-  font-family: "Roboto", sans-serif;
+  background: #212121; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right bottom, #212121, #3a3335);
+  background: -moz-linear-gradient(to right bottom, #212121, #3a3335);
+  background: -o-linear-gradient(to right bottom, #212121, #3a3335);
+  background: linear-gradient(to right bottom, #212121, #3a3335);
+  font-family: 'Open Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -126,7 +131,7 @@ body {
 
 
 .footer-bs {
-  background-color: #3c3d41;
+  background-color: #212121;
 	padding: 60px 40px;
 	color: rgba(255,255,255,1.00);
 	border-bottom-right-radius: 6px;
@@ -178,8 +183,7 @@ body {
 }
 
 #MapNet {
-  font-family: Roboto Slab;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .col-md-7 {
